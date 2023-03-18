@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 Allow: /
-Sitemap: https://www.rockorrest.com/sitemap.xml
+Sitemap: https://blog.rockorrest.com/sitemap.xml
