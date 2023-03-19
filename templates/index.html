@@ -73,9 +73,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           {% for item in config.extra.header_menu %}
-          <li><a href="{{ item.url | safe | replace(from=" $BASE_URL", to=config.base_url) }}">{{ item.name
-              }}</a></li>
-
+          <li><a href="{{ item.url | safe | replace(from="$BASE_URL", to=config.base_url) }}">{{ item.name }}</a></li>
           {% endfor %}
         </ul>
       </nav><!-- .navbar -->
