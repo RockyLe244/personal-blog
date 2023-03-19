@@ -1,33 +1,77 @@
 {% macro meta(page) %}
-    <svg style="margin-bottom:-3px" class="i-clock" viewBox="0 0 32 32"
-         width="16" height="16" fill="none" stroke="currentcolor"
-         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-        <circle cx="16" cy="16" r="14"/>
-        <path d="M16 8 L16 16 20 20"/>
+<div class="post-meta">
+    <svg style="margin-bottom: 3px" class="i-clock" viewBox="0 0 32 32" width="16" height="16" fill="none"
+        stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <circle cx="16" cy="16" r="14" />
+        <path d="M16 8 L16 16 20 20" />
     </svg>
-    <span>{{ page.reading_time }} minute read</span>
-    <svg style="margin-bottom: -3px" class="i-edit" viewBox="0 0 32 32"
-         width="16" height="16" fill="none" stroke="currentcolor"
-         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-        <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"/>
-    </svg>
+    <span>{{ page.reading_time }} phút để lướt</span>
 
-    {% if page.date %}Published: {{ page.date | date(format="%F") }}{% endif %}
+    {% if page.date %}
+    <span class="mx-1">&bullet;</span>
+    <svg style="margin-bottom: 3px" class="i-edit" viewBox="0 0 32 32" width="16" height="16" fill="none"
+        stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z" />
+    </svg>
+    <span class="date">{{ page.date | date(format="%F") }}</span>
+    {% endif %}
+</div>
 {% endmacro meta %}
 
 {% macro page_in_list(page) %}
-    <article itemscope itemtype="http://schema.org/CreativeWork">
-        <header>
-            <h2 itemprop="name">
-                <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
-            </h2>
-            <span class="muted">{{ self::meta(page=page) }}</span>
-        </header>
-        {% if page.summary %}
-            <div itemprop="summary">
-                {{ page.summary | safe }}
-                <nav class="readmore"><a itemprop="url" href="{{ page.permalink | safe }}">Read More&nbsp;&raquo;</a></nav>
-            </div>
+<div class="d-md-flex post-entry-2 half">
+
+    <a href="{{ page.permalink | safe }}" class="me-4 thumbnail">
+        {% if page.extra.feature_image %}
+        <img src="{{ page.extra.feature_image | safe }}" alt="" class="img-fluid">
+        {% else %}
+        <img src="{{ config.extra.no_feature_image_placeholder | safe }}" alt="" class="img-fluid">
         {% endif %}
-    </article>
+    </a>
+
+    <div>
+        {{ self::meta(page=page) }}
+        <h3><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h3>
+        {% if page.summary %}
+        <p>{{ page.summary | safe }}</p>
+        {% endif %}
+        <a href="{{ page.permalink | safe }}">Xem Thêm&nbsp;&raquo;</a>
+    </div>
+</div>
 {% endmacro page_in_list %}
+
+{% macro footer(page) %}
+<div class="row">
+    <hr>
+
+    <div>
+        {% if config.extra.author %}
+            <h6>{{ config.extra.author }}</h6>
+        {% endif %}
+
+        {% if page.taxonomies.categories %}
+            {% set category = page.taxonomies.categories[0] %}
+            chuyên mục <strong><a href="{{ get_taxonomy_url(kind="categories", name=category) | safe }}">{{ category }}</a></strong>
+        {% endif %}
+
+        {% if page.taxonomies.tags %}
+            {% if page.taxonomies.categories %}||{% endif %}
+            được gắn thẻ
+            {% for tag in page.taxonomies.tags %}
+                <strong><a href="{{ get_taxonomy_url(kind="tags", name=tag) | safe }}">{{ tag }}</a></strong>
+                {% if page.taxonomies.tags | length > 1 %}
+                    {% if loop.index != page.taxonomies.tags | length %}
+                        {% if loop.index == page.taxonomies.tags | length - 1 %}
+                            và
+                        {% else %}
+                            ,
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+        
+    </div>
+
+</div>
+{% endmacro footer %}

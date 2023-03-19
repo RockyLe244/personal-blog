@@ -1,19 +1,29 @@
 {% extends "index.html" %}
 
 {% block content %}
-    {% block header %}
-        {{ super() }}
-    {% endblock header %}
 
-    <h1>Categories</h1>
+<main id="main">
+    <section>
+        <div class="container">
+            <div class="row">
+                <h2>Categories</h2>
 
-    {% if terms %}
-        <ul>
-            {% for term in terms %}
-                <li>
-                    <a href="{{ term.permalink | safe }}">{{ term.name }}</a>({{ term.pages | length }})
-                </li>
-            {% endfor %}
-        </ul>
-    {% endif %}
+                    <div class="col-md-9" data-aos="fade-up">
+                        {% if terms %}
+                        <ul>
+                            {% for term in terms %}
+                            <li>
+                                <h3 class="category-title"><a href="{{ term.permalink | safe }}">{{ term.name }}</a>
+                                    ({{ term.pages | length }})</h3>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+
+            </div>
+        </div>
+    </section>
+</main><!-- End #main -->
+
 {% endblock content %}

@@ -12,7 +12,6 @@ build_search_index = true
 
 # The taxonomies to be rendered for the site and their configuration.
 taxonomies = [
-  {name = "authors"}, # Basic definition: no feed or pagination
   {name = "categories", feed = true},
   {name = "tags", feed = true},
 ]
@@ -28,9 +27,28 @@ author = "Rocky Le"
 email = "rocky@alasts.com"
 github = "https://github.com/rockyle244"
 twitter = "https://twitter.com/rockyle244"
-header_title = "My Blog"
+no_feature_image_placeholder = "/assets/img/no-feature-image-placeholder.jpg"
 header_menu = [
-  {url = "$BASE_URL", name = "Home"},
-  {url = "$BASE_URL/categories", name = "Categories"},
-  {url = "$BASE_URL/tags", name = "Tags"},
+  {url = "$BASE_URL", name = "Bìa"},
+  {url = "$BASE_URL/categories", name = "Chuyên Mục"},
+  {url = "$BASE_URL/tags", name = "Thẻ"},
 ]
+# Rel Icons
+rel_icon_path = "/assets/img/favicon.png"
+rel_apple_touch_icon_path = "/assets/img/apple-touch-icon.png"
+# Vendor Style Files
+vendor_css_bootstrap = "/assets/vendor/bootstrap/css/bootstrap.min.css"
+vendor_css_bootstrap_icons = "/assets/vendor/bootstrap-icons/bootstrap-icons.css"
+vendor_css_swiper = "/assets/vendor/swiper/swiper-bundle.min.css"
+vendor_css_glightbox = "/assets/vendor/glightbox/css/glightbox.min.css"
+vendor_css_aos = "/assets/vendor/aos/aos.css"
+# Main Style Files
+css_variables = "/assets/css/variables.css"
+css_main = "/assets/css/blog.css"
+# Vendor JS Files
+vendor_js_bootstrap = "/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
+vendor_js_swiper = "/assets/vendor/swiper/swiper-bundle.min.js"
+vendor_js_glightbox = "/assets/vendor/glightbox/js/glightbox.min.js"
+vendor_js_aos = "/assets/vendor/aos/aos.js"
+# Main JS File
+js_main = "/assets/js/blog.js"

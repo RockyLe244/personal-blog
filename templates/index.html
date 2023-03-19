@@ -2,77 +2,205 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
-      <!-- Enable responsiveness on mobile devices-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-      <!-- Google tag (gtag.js) -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-FBK3BGZRXD"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FBK3BGZRXD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-        gtag('config', 'G-FBK3BGZRXD');
-      </script>
+    gtag('config', 'G-FBK3BGZRXD');
+  </script>
 
-      <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+  <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-      {% if config.generate_feed %}
-        <link rel="alternate" type={% if config.feed_filename == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title="RSS" href="{{ get_url(path=config.feed_filename) | safe }}">
+  {% if config.generate_feed %}
+  <link rel="alternate" type={% if config.feed_filename=="atom.xml" %}"application/atom+xml"{% else
+    %}"application/rss+xml"{% endif %} title="RSS" href="{{ get_url(path=config.feed_filename) | safe }}">
+  {% endif %}
+
+  <!-- Favicons -->
+  <link href="{{ get_url(path=config.extra.rel_icon_path, trailing_slash=false) | safe }}" rel="icon">
+  <link href="{{ get_url(path=config.extra.rel_apple_touch_icon_path, trailing_slash=false) | safe }}"
+    rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+
+  {% block css %}
+  <!-- Vendor CSS Files -->
+  <link href="{{ get_url(path=config.extra.vendor_css_bootstrap, trailing_slash=false) | safe }}" rel="stylesheet">
+  <link href="{{ get_url(path=config.extra.vendor_css_bootstrap_icons, trailing_slash=false) | safe }}"
+    rel="stylesheet">
+  <link href="{{ get_url(path=config.extra.vendor_css_swiper, trailing_slash=false) | safe }}" rel="stylesheet">
+  <link href="{{ get_url(path=config.extra.vendor_css_glightbox, trailing_slash=false) | safe }}" rel="stylesheet">
+  <link href="{{ get_url(path=config.extra.vendor_css_aos, trailing_slash=false) | safe }}" rel="stylesheet">
+
+  <!-- Template Main CSS Files -->
+  <link href="{{ get_url(path=config.extra.css_variables, trailing_slash=false) | safe }}" rel="stylesheet">
+  <link href="{{ get_url(path=config.extra.css_main, trailing_slash=false) | safe }}" rel="stylesheet">
+
+
+  {% endblock css %}
+
+  {% block extra_head %}
+  {% endblock extra_head %}
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="/" class="logo d-flex align-items-center">
+
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>Rocky Le's Blog</h1>
+      </a>
+      {% if config.extra.header_menu %}
+      <nav id="navbar" class="navbar">
+        <ul>
+          {% for item in config.extra.header_menu %}
+          <li><a href="{{ item.url | safe | replace(from=" $BASE_URL", to=config.base_url) }}">{{ item.name
+              }}</a></li>
+
+          {% endfor %}
+        </ul>
+      </nav><!-- .navbar -->
       {% endif %}
 
-      {% block css %}
-          <link rel="stylesheet" href="{{ get_url(path="blog.css", trailing_slash=false) | safe }}">
-      {% endblock css %}
+      <div class="position-relative">
+        <a href="#" class="mx-2"><span class="bi-facebook"></span></a>
+        <a href="#" class="mx-2"><span class="bi-twitter"></span></a>
+        <a href="#" class="mx-2"><span class="bi-linkedin"></span></a>
 
-      {% block extra_head %}
-      {% endblock extra_head %}
-    </head>
+        <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
+        <i class="bi bi-list mobile-nav-toggle"></i>
 
-    <body class="hack dark main container">
-        {% block content %}
-            {% block header %}
-                {% if config.extra.header_menu %}
-                    <header>
-                        <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
-                        {% for item in config.extra.header_menu %}
-                            <a itemprop="url"
-                               class="{% if item.url | replace(from="$BASE_URL", to=config.base_url) == current_url %}active{% endif %}"
-                               href="{{ item.url | safe | replace(from="$BASE_URL", to=config.base_url) }}">
-                                <span itemprop="name">{{ item.name }}</span></a>
-                        {% endfor %}
-                        </nav>
-                    </header>
+        <!-- ======= Search Form ======= -->
+        <div class="search-form-wrap js-search-form-wrap">
+          <form action="search-result.html" class="search-form">
+            <span class="icon bi-search"></span>
+            <input type="text" placeholder="Search" class="form-control">
+            <button class="btn js-search-close"><span class="bi-x"></span></button>
+          </form>
+        </div><!-- End Search Form -->
+
+      </div>
+
+    </div>
+
+  </header><!-- End Header -->
+
+  {% block content %}
+  <main id="main">
+
+    <section>
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-9" data-aos="fade-up">
+
+            {% for page in paginator.pages %}
+            {{ macro_post::page_in_list(page=page) }}
+            {% endfor %}
+
+            <div class="text-start py-4">
+              <div class="custom-pagination">
+                {% if paginator.previous %}
+                <a href="{{ paginator.previous }}" class="prev">&laquo; Previous</a> |
                 {% endif %}
-            {% endblock header %}
-
-            <main>
-                {% if config.extra.header_title %}
-                    <header>
-                        <h1>{{ config.extra.header_title }}</h1>
-                    </header>
+                <span>Trang {{ paginator.current_index }} / {{ paginator.number_pagers }}</span>
+                {% if paginator.next %}
+                | <a href="{{ paginator.next }}" class="next">Next &raquo;</a>
                 {% endif %}
-                {% for page in paginator.pages %}
-                    {{ macro_post::page_in_list(page=page) }}
-                {% endfor %}
+              </div>
+            </div>
 
-                <nav>
-                  <p>
-                    {% if paginator.previous %}
-                      <a href="{{ paginator.previous }}">&laquo; Previous</a> |
-                    {% endif %}
-                    <span>Page {{ paginator.current_index }} of {{ paginator.number_pagers }}</span>
-                    {% if paginator.next %}
-                      | <a href="{{ paginator.next }}">Next &raquo;</a>
-                    {% endif %}
-                  </p>
-                </nav>
-            </main>
-        {% endblock content %}
-    </body>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+  {% endblock content %}
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="footer-content">
+      <div class="container">
+
+        <div class="row g-5">
+          <div class="col-lg-4">
+            <h3 class="footer-heading">Viết về nơi đây</h3>
+            <p>Trang blog này được xây dựng với mục đích ghi lại sự phát triển bản thân của chính tác giả (Rocky), đồng thời cũng nhằm tạo thêm những giá trị khác...</p>
+            <p><a href="/viet-ve-viec-viet-blog/" class="footer-link-more">Đọc nốt</a></p>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <h3 class="footer-heading">Sơ đồ</h3>
+            <ul class="footer-links list-unstyled">
+              <li><a href="https://www.rockorrest.com"><i class="bi bi-chevron-right"></i> Trang cá nhân</a></li>
+              <li><a href="/"><i class="bi bi-chevron-right"></i> Trang blog</a></li>
+              <li><a href="/categories/"><i class="bi bi-chevron-right"></i> Các chuyên mục</a></li>
+              <li><a href="/tags/"><i class="bi bi-chevron-right"></i> Các thẻ đã gắn</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <h3 class="footer-heading">Chuyên Mục</h3>
+            <ul class="footer-links list-unstyled">
+              <li><a href="/categories/quan-ly-san-pham/"><i class="bi bi-chevron-right"></i> Quản Lý Sản Phẩm</a></li>
+              <li><a href="/categories/phat-trien-ban-than/"><i class="bi bi-chevron-right"></i> Phát Triển Bản Thân</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="container">
+        <hr>
+        <div class="row justify-content-between">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            <div class="copyright">
+              © Xây dựng bởi <strong><span class="credits"><a href="https://www.rockorrest.com">Rocky</a></span></strong> .
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </footer> <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ get_url(path=config.extra.vendor_js_bootstrap, trailing_slash=false) | safe }}"></script>
+  <script src="{{ get_url(path=config.extra.vendor_js_swiper, trailing_slash=false) | safe }}"></script>
+  <script src="{{ get_url(path=config.extra.vendor_js_glightbox, trailing_slash=false) | safe }}"></script>
+  <script src="{{ get_url(path=config.extra.vendor_js_aos, trailing_slash=false) | safe }}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{ get_url(path=config.extra.js_main, trailing_slash=false) | safe }}"></script>
+
+</body>
 
 </html>

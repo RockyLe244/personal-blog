@@ -2,53 +2,32 @@
 {% import "macros/post.html" as macro_post %}
 
 {% block content %}
-    {% block header %}
-        {{ super() }}
-    {% endblock header %}
 
-<article itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-        <h1 itemprop="headline">{{ page.title }}</h1>
-        <span class="muted">{{ macro_post::meta(page=page) }}</span>
-    </header>
-    <div itemprop="articleBody">
-      {{ page.content | safe }}
-    </div>
+<main id="main">
 
-    {% block page_footer %}
-        <footer>
-            <hr>
-            <p>
-                {% if page.extra.author %}
-                    Published by {{ page.extra.author }}
-                {% elif config.extra.author %}
-                    Published by {{ config.extra.author }}
-                {% endif %}
-                {% if page.taxonomies.categories %}
-                    {% set category = page.taxonomies.categories[0] %}
-                    in <a href="{{ get_taxonomy_url(kind="categories", name=category) | safe }}">{{ category }}</a>
-                {% endif %}
-                {% if page.taxonomies.tags %}
-                    {% if page.taxonomies.categories %}and{% endif %}
-                    tagged
-                    {% for tag in page.taxonomies.tags %}
-                        <a href="{{ get_taxonomy_url(kind="tags", name=tag) | safe }}">{{ tag }}</a>
-                        {% if page.taxonomies.tags | length > 1 %}
-                            {% if loop.index != page.taxonomies.tags | length %}
-                                {% if loop.index == page.taxonomies.tags | length - 1 %}
-                                    and
-                                {% else %}
-                                    ,
-                                {% endif %}
-                            {% endif %}
-                        {% endif %}
-                    {% endfor %}
-                {% endif %}
-            </p>
-            {% block extra_footer %}
-            {% endblock extra_footer %}
-        </footer>
-    {% endblock page_footer %}
-</article>
+    <section class="single-post-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 post-content" data-aos="fade-up">
+
+                    <!-- ======= Single Post Content ======= -->
+                    <div class="single-post">
+                        {{ macro_post::meta(page=page) }}
+                        <h1 class="mb-5">{{ page.title }}</h1>
+                        {{ page.content | safe }}
+
+                    </div><!-- End Single Post Content -->
+
+                </div>
+            </div>
+
+            {% block page_footer %}
+            {{ macro_post::footer(page=page) }}
+            {% endblock page_footer %}
+
+        </div>
+
+    </section>
+</main><!-- End #main -->
 
 {% endblock content %}
