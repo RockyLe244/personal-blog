@@ -11,9 +11,9 @@ compile_sass = true
 build_search_index = true
 
 # The taxonomies to be rendered for the site and their configuration.
-taxonomies = [
-  {name = "categories", feed = true},
-  {name = "tags", feed = true},
+taxonomies = [  
+  {name = "chuyen-muc", feed = true},
+  {name = "the", feed = true},
 ]
 
 [markdown]
@@ -29,9 +29,9 @@ github = "https://github.com/rockyle244"
 twitter = "https://twitter.com/rockyle244"
 no_feature_image_placeholder = "/assets/img/no-feature-image-placeholder.jpg"
 header_menu = [
-  {url = "$BASE_URL", name = "Bìa"},
-  {url = "$BASE_URL/categories", name = "Chuyên Mục"},
-  {url = "$BASE_URL/tags", name = "Thẻ"},
+  {url = "$BASE_URL/bai-viet/", name = "Bài Viết", slash = true},
+  {url = "$BASE_URL/chuyen-muc/", name = "Chuyên Mục", slash = true},
+  {url = "$BASE_URL/the/", name = "Thẻ", slash = true},
 ]
 # Rel Icons
 rel_icon_path = "/assets/img/favicon.png"

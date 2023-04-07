@@ -5,8 +5,8 @@ slug = "herhr"
 draft = true
 
 [taxonomies]
-categories = ["quản lý sản phẩm"]
-tags = ["thiết kế giao diện", "UI"]
+chuyen-muc = ["quản lý sản phẩm"]
+the = ["thiết kế giao diện", "UI"]
 
 
 [extra]

@@ -5,7 +5,7 @@ slug = "day la cai gi"
 draft = true
 
 [taxonomies]
-categories = ["quản lý sản phẩm"]
+chuyen-muc = ["quản lý sản phẩm"]
 
 
 [extra]
