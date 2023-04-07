@@ -2,11 +2,17 @@
 {% import "macros/post.html" as macro_post %}
 
 {% block SEO %}
-<meta propety="og:title" content="{{ page.title }}" />
-<meta propety="og:type" content="blog" />
-<meta propety="og:url" content="{{ current_url | safe}}" />
+    <title>{{ page.title }}</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta propety="og:title" content="{{ page.title | safe }}" />
+    
+    <meta propety="og:description" content="" />
+    
+    <meta propety="og:type" content="blog" />
+    <meta propety="og:url" content="{{ current_url | safe}}" />
 {% if page.extra.feature_image %}
-<meta propety="og:image" content="{{ config.base_url | safe }}{{ page.extra.feature_image | safe }}" />
+    <meta propety="og:image" content="{{ config.base_url | safe }}{{ page.extra.feature_image | safe }}" />
 {% endif %}
 {% endblock SEO %}
 
