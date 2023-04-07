@@ -22,7 +22,7 @@ Chuyện là tối hai hôm trước, đột nhiên nóc nhà bảo mình gợi 
 
 Có điều với quan điểm người làm sản phẩm, có yêu cầu thì mình sẽ đề xuất giải pháp. Khách hàng này không bỏ mình được nhưng triệt tiêu doanh thu của mình nặng lắm.
 
-Vậy nói về sách cho mảng nhân sự thì mình nên đề xuất thế nào cho hợp lý? Bản thân mình cũng làm việc với con người, cũng phải tìm hiểu, nghiên cứu sách vở để tham khảo, vậy nên mình xin liệt kê một số đầu sách theo quan điểm của mình có liên quan tới yếu tố con người và nhân sự, không ít thì nhiều hi vọng sẽ là một nguồn tài liệu tham khảo cho các bạn.
+Vậy nói về sách cho mảng nhân sự thì mình nên đề xuất thế nào cho hợp lý? Bản thân mình cũng làm việc với con người, cũng phải tìm hiểu, nghiên cứu sách vở để tham khảo, vậy nên mình xin liệt kê một số đầu sách theo quan điểm của mình có liên quan tới yếu tố con người và nhân sự, không ít thì nhiều hi vọng sẽ là một nguồn tài liệu tham khảo cho cả nhà.
 
 ## Top 5 theo quan điểm cá nhân của mình
 
