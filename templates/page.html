@@ -1,6 +1,15 @@
 {% extends "index.html" %}
 {% import "macros/post.html" as macro_post %}
 
+{% block SEO %}
+<meta propety="og:title" content="{{ page.title }}" />
+<meta propety="og:type" content="blog" />
+<meta propety="og:url" content="{{ current_url | safe}}" />
+{% if page.extra.feature_image %}
+<meta propety="og:image" content="{{ config.base_url | safe }}{{ page.extra.feature_image | safe }}" />
+{% endif %}
+{% endblock SEO %}
+
 {% block content %}
 
 <main id="main">

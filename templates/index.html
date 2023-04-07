@@ -21,6 +21,14 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
+  <!-- SEO Open Graph -->
+  {% block SEO %}
+  <meta propety="og:title" content="" />
+  <meta propety="og:type" content="" />
+  <meta propety="og:url" content="" />
+  <meta propety="og:image" content="" />
+  {% endblock SEO %}
+
   {% if config.generate_feed %}
   <link rel="alternate" type={% if config.feed_filename=="atom.xml" %}"application/atom+xml"{% else
     %}"application/rss+xml"{% endif %} title="RSS" href="{{ get_url(path=config.feed_filename) | safe }}">
