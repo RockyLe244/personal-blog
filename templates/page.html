@@ -3,17 +3,30 @@
 
 {% block SEO %}
     <title>{{ page.title }}</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
-    <meta propety="og:title" content="{{ page.title | safe }}" />
+    {% if page.description %}
+    <meta content="{{ page.description | safe }}" name="description">
+    {% endif %}
     
-    <meta propety="og:description" content="" />
+    {% if config.extra.author %}
+    <meta name="author" content="{{ config.extra.author }}">
+    {% endif %}
     
-    <meta propety="og:type" content="blog" />
-    <meta propety="og:url" content="{{ current_url | safe}}" />
+    {% if page.date  %}
+    <meta name="date" content="{{ page.date | date(format="%F") }}">
+    {% endif %}
+    
+    <meta property="og:title" content="{{ page.title | safe }}" />
+    {% if page.description %}
+    <meta property="og:description" content="{{ page.description | safe }}" />
+    {% endif %}
+    
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ current_url | safe}}" />
 {% if page.extra.feature_image %}
-    <meta propety="og:image" content="{{ config.base_url | safe }}{{ page.extra.feature_image | safe }}" />
+    <meta property="og:image" content="{{ config.base_url | safe }}{{ page.extra.feature_image | safe }}" />    
 {% endif %}
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="og:site_name" content="Rocky Le | ROCK your challenges, or rest on your execuses" />
 {% endblock SEO %}
 
 {% block content %}
@@ -27,9 +40,11 @@
 
                     <!-- ======= Single Post Content ======= -->
                     <div class="single-post">
-                        {{ macro_post::meta(page=page) }}
-                        <h1 class="mb-5">{{ page.title }}</h1>
-                        {{ page.content | safe }}
+                        <article>                            
+                            {{ macro_post::meta(page=page) }}
+                            <h1 class="mb-5">{{ page.title }}</h1>
+                            {{ page.content | safe }}
+                        </article>
 
                     </div><!-- End Single Post Content -->
 

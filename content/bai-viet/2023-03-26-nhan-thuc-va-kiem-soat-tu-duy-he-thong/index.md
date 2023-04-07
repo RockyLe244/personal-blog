@@ -1,5 +1,6 @@
 +++
 title = "Nhận thức và kiểm soát lối tư duy hệ thống"
+description = "Tư duy hệ thống là một công cụ mạnh mẽ để giải quyết vấn đề, nhưng nó đòi hỏi một cách nhìn khác về thế giới. Bằng cách hiểu mối liên kết của các thành phần hay yếu tố khác nhau trong một hệ thống, cả nhà có thể tìm ra các giải pháp phù hợp hơn và tránh những hậu quả không mong muốn."
 date = 2023-03-26T15:18:00+07:00
 slug = "kiem-soat-tu-duy-he-thong"
 draft = false

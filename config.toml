@@ -1,7 +1,7 @@
 # The URL the site will be built for
 base_url = "https://blog.rockorrest.com"
-title = "Rocky Le's Blog"
-description = ""
+title = "Rocky Le | ROCK your challenges, or rest on your execuses"
+description = "Trang blog này được xây dựng với mục đích ghi lại sự phát triển bản thân của tác giả (Rocky), đồng thời cũng nhằm tạo thêm những giá trị khác cho cộng đồng."
 generate_feed = true
 
 # Whether to automatically compile all Sass files in the sass directory

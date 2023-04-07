@@ -1,5 +1,6 @@
 +++
 title = "Gợi ý một số tựa sách cho người làm nghề nhân sự"
+description = "Bản thân mình cũng làm việc với con người, cũng phải tìm hiểu, nghiên cứu sách vở để tham khảo, vậy nên mình xin liệt kê một số đầu sách theo quan điểm của mình có liên quan tới yếu tố con người và nhân sự, không ít thì nhiều hi vọng sẽ là một nguồn tài liệu tham khảo cho cả nhà."
 date = 2023-04-07T03:28:00+07:00
 slug = "Gợi ý một số tựa sách cho người làm nghề nhân sự"
 draft = false

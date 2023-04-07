@@ -1,21 +1,21 @@
 {% macro meta(page) %}
-<div class="post-meta">
-    <svg style="margin-bottom: 3px" class="i-clock" viewBox="0 0 32 32" width="16" height="16" fill="none"
-        stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-        <circle cx="16" cy="16" r="14" />
-        <path d="M16 8 L16 16 20 20" />
-    </svg>
-    <span>{{ page.reading_time }} phút để lướt</span>
+                            <div class="post-meta">
+                                <svg style="margin-bottom: 3px" class="i-clock" viewBox="0 0 32 32" width="16" height="16" fill="none"
+                                    stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+                                    <circle cx="16" cy="16" r="14" />
+                                    <path d="M16 8 L16 16 20 20" />
+                                </svg>
+                                <span>{{ page.reading_time }} phút để lướt</span>
 
-    {% if page.date %}
-    <span class="mx-1">&bullet;</span>
-    <svg style="margin-bottom: 3px" class="i-edit" viewBox="0 0 32 32" width="16" height="16" fill="none"
-        stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-        <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z" />
-    </svg>
-    <span class="date">{{ page.date | date(format="%F") }}</span>
-    {% endif %}
-</div>
+                                {% if page.date %}
+                                <span class="mx-1">&bullet;</span>
+                                <svg style="margin-bottom: 3px" class="i-edit" viewBox="0 0 32 32" width="16" height="16" fill="none"
+                                    stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+                                    <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z" />
+                                </svg>
+                                <span class="date">{{ page.date | date(format="%F") }}</span>
+                                {% endif %}
+                            </div>
 {% endmacro meta %}
 
 {% macro page_in_list(page) %}
@@ -33,7 +33,7 @@
         {{ self::meta(page=page) }}
         <h3><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h3>
         {% if page.summary %}
-        <p>{{ page.summary | safe }}</p>
+        {{ page.summary | safe }}
         {% endif %}
         <a href="{{ page.permalink | safe }}">Xem Thêm&nbsp;&raquo;</a>
     </div>

@@ -1,5 +1,6 @@
 +++
 title = "Đừng chỉ nhìn triệu chứng, hãy tìm nguyên nhân gốc rễ để giải quyết vấn đề thật sự"
+description = "Khi một vấn đề xuất hiện, số đông thường tập trung vào việc giải quyết các triệu chứng và hậu quả của nó, thay vì tìm hiểu nguyên nhân gốc rễ. Điều này dẫn đến việc số đông đó chỉ giải quyết các vấn đề tạm thời và không giải quyết được vấn đề thật sự. Tìm ra nguyên nhân gốc rễ để giải quyết vấn đề thực sự là điều cần thiết để đạt được sự cải thiện và phát triển bền vững trong cả khía cạnh công việc lẫn cuộc sống."
 date = 2023-04-01T20:34:00+07:00
 slug = "Đừng chỉ nhìn triệu chứng, hãy tìm nguyên nhân gốc rễ để giải quyết vấn đề thật sự"
 draft = false

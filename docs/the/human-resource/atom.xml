@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
-    <title>Rocky Le&#x27;s Blog - Human Resource</title>
+    <title>Rocky Le | ROCK your challenges, or rest on your execuses - Human Resource</title>
+    <subtitle>Trang blog này được xây dựng với mục đích ghi lại sự phát triển bản thân của tác giả (Rocky), đồng thời cũng nhằm tạo thêm những giá trị khác cho cộng đồng.</subtitle>
     <link href="https://blog.rockorrest.com/the/human-resource/atom.xml" rel="self" type="application/atom+xml"/>
     <link href="https://blog.rockorrest.com"/>
     <generator uri="https://www.getzola.org/">Zola</generator>

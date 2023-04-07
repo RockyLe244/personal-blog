@@ -1,5 +1,6 @@
 +++
 title = "Ra quyết định hoặc chìm trong vấn đề"
+description = "Ngay từ trước khi thật sự diễn ra quá trình đưa ra quyết định, cả nhà cần phải đảm bảo mình thật sự quan tâm tới việc đưa ra quyết định. Vậy quan tâm như thế nào? Đó chính là tập trung thời gian và công sức nhất định để tìm hiểu các thông tin, góc nhìn liên quan tới vấn đề cả nhà sẽ đưa ra quyết định. Điều này bao gồm cả việc tham khảo ý kiến từ các chuyên gia hoặc cá nhân liên quan tới vấn đề. Việc này sẽ có giá trị tỉ lệ thuận với mức độ quan tâm của cả nhà trong quá trình này."
 date = 2023-03-20T18:30:00+07:00
 slug = "Cach ban dua ra quyet dinh quan trong toi muc nao"
 draft = false

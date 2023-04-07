@@ -1,5 +1,6 @@
 +++
 title = "Tối ưu hóa cách bạn cảm nhận về sản phẩm"
+description = "Với vai trò là một người quản lý sản phẩm nói chung, để đảm bảo việc xây dựng sản phẩm đạt hiệu quả thì thông thường cả nhà sẽ cần nắm vững kha khá các kỹ năng khác nhau. Trong số đó, có một thứ mình thích gọi là năng lực hơn là kỹ năng, một năng lực cốt lõi và cực kỳ quan trọng bậc nhất với người làm sản phẩm theo góc nhìn của mình."
 date = 2023-03-24T16:39:00+07:00
 slug = "toi-uu-hoa-cach-ban-cam-nhan-ve-san-pham"
 draft = false

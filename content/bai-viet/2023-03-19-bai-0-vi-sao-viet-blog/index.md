@@ -1,5 +1,6 @@
 +++
 title = "Mục tiêu khi xây dựng trang Blog của Rocky Le"
+description = "Trang blog này được xây dựng với mục đích ghi lại sự phát triển bản thân của chính tác giả (Rocky), đồng thời cũng nhằm tạo thêm những giá trị khác..."
 date = 2023-03-19T05:17:00+07:00
 slug = "Viet ve viec viet blog"
 draft = false
