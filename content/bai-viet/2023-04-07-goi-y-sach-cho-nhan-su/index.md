@@ -10,12 +10,15 @@ the = ["Human Resource", "Book"]
 
 
 [extra]
+feature_image = "/bai-viet/goi-y-mot-so-tua-sach-cho-nguoi-lam-nghe-nhan-su/feature-image.jpg"
 
 +++
 
 Chuyện là tối hai hôm trước, đột nhiên nóc nhà bảo mình gợi ý mấy đầu sách để đọc về mảng nhân sự. Không biết ở công ty, sếp dí kiểu gì xong về dí mình, làm mình hoang mang mất ngủ quên cả nấu cơm. Mình thì có chuyên môn gì về nhân sự mà giới thiệu sách chứ, yêu cầu gì vô lý quá vậy????
 
 <!-- more -->
+
+![Book Shelf](feature-image.jpg)
 
 Có điều với quan điểm người làm sản phẩm, có yêu cầu thì mình sẽ đề xuất giải pháp. Khách hàng này không bỏ mình được nhưng triệt tiêu doanh thu của mình nặng lắm.
 
