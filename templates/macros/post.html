@@ -49,19 +49,19 @@
             <h6>{{ config.extra.author }}</h6>
         {% endif %}
 
-        {% if page.taxonomies.categories %}
-            {% set category = page.taxonomies.categories[0] %}
-            chuyên mục <strong><a href="{{ get_taxonomy_url(kind="categories", name=category) | safe }}">{{ category }}</a></strong>
+        {% if page.taxonomies["chuyen-muc"] %}
+            {% set category = page.taxonomies["chuyen-muc"][0] %}
+            chuyên mục <strong><a href="{{ get_taxonomy_url(kind="chuyen-muc", name=category) | safe }}">{{ category }}</a></strong>
         {% endif %}
 
-        {% if page.taxonomies.tags %}
-            {% if page.taxonomies.categories %}||{% endif %}
+        {% if page.taxonomies.the %}
+            {% if page.taxonomies["chuyen-muc"] %}||{% endif %}
             được gắn thẻ
-            {% for tag in page.taxonomies.tags %}
-                <strong><a href="{{ get_taxonomy_url(kind="tags", name=tag) | safe }}">{{ tag }}</a></strong>
-                {% if page.taxonomies.tags | length > 1 %}
-                    {% if loop.index != page.taxonomies.tags | length %}
-                        {% if loop.index == page.taxonomies.tags | length - 1 %}
+            {% for tag in page.taxonomies.the %}
+                <strong><a href="{{ get_taxonomy_url(kind="the", name=tag) | safe }}">{{ tag }}</a></strong>
+                {% if page.taxonomies.the | length > 1 %}
+                    {% if loop.index != page.taxonomies.the | length %}
+                        {% if loop.index == page.taxonomies.the | length - 1 %}
                             và
                         {% else %}
                             ,
